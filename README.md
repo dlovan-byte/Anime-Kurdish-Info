@@ -1,0 +1,1 @@
+# Anime-Kurdish-Info
