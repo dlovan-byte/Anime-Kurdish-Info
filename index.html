@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anime Archive — Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#home">ANIME<span>ARCHIVE</span></a>
+  <nav><a href="#home">Home</a><a href="#browse">Browse</a><a href="#detail">Details</a><a href="#characters">Characters</a></nav>
+  <div class="tools"><button id="lang">EN</button><button class="menu">☰</button></div>
+</header>
+
+<main>
+<section id="home" class="hero">
+ <div class="hero-copy">
+  <p class="eyebrow">LIVE ANIME DATABASE</p>
+  <h1>DISCOVER<br><span>ANIME</span></h1>
+  <p class="lead">Search thousands of anime and load posters, scores, descriptions, characters and episodes directly from a live API.</p>
+  <div class="actions"><a class="btn gold" href="#browse">Browse library</a><button class="btn" id="random">Random anime</button></div>
+ </div>
+ <div class="hero-symbol"><div class="ring"></div><b>A</b></div>
+</section>
+
+<section id="browse" class="section">
+ <div class="heading"><div><p class="label">01 / LIVE SEARCH</p><h2>Anime library</h2></div><div class="status"><i id="dot"></i><span id="status">Connecting…</span></div></div>
+ <div class="searchbar"><input id="q" type="search" placeholder="Search anime, e.g. Code Geass"><button id="search">SEARCH</button></div>
+ <div class="filters"><select id="type"><option value="">Any type</option><option value="tv">TV</option><option value="movie">Movie</option><option value="ova">OVA</option><option value="ona">ONA</option></select><select id="sort"><option value="score">Score</option><option value="popularity">Popularity</option><option value="title">Title</option></select></div>
+ <div id="results" class="grid"></div>
+ <div class="pager"><button id="prev">← Previous</button><span id="page">Page 1</span><button id="next">Next →</button></div>
+</section>
+
+<section id="detail" class="section detail hidden">
+ <div class="detail-poster"><img id="poster" alt=""></div>
+ <div class="detail-copy">
+  <p class="label">02 / ANIME PROFILE</p><h2 id="title">—</h2><p id="meta" class="meta">—</p>
+  <div class="score"><strong id="score">—</strong><span>/ 10<br><small>MAL score</small></span></div>
+  <p id="synopsis" class="synopsis">Select an anime to view its full profile.</p>
+  <div id="chips" class="chips"></div>
+  <div class="stats"><div><b id="eps">—</b><span>Episodes</span></div><div><b id="status2">—</b><span>Status</span></div><div><b id="aired">—</b><span>Aired</span></div></div>
+ </div>
+</section>
+
+<section id="characters" class="section hidden" data-detail-section>
+ <div class="heading"><div><p class="label">03 / CAST</p><h2>Characters</h2></div></div>
+ <div id="chars" class="character-grid"></div>
+</section>
+
+<section id="episodes" class="section hidden" data-detail-section>
+ <div class="heading"><div><p class="label">04 / EPISODES</p><h2>Episodes</h2></div></div>
+ <div id="episodesList" class="episode-list"></div>
+ <button id="moreEpisodes" class="more">Load more episodes</button>
+</section>
+</main>
+<footer><div class="logo">ANIME<span>ARCHIVE</span></div><p>Data provided through Jikan, an unofficial MyAnimeList REST API.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
